@@ -12,18 +12,19 @@ const mem =[
 		'4'
 ]	
 const caption =[
-		'1',
-		'2',
-		'3',
-		'4'
+		'JavaScript is not difficult and understandable',
+		'Go to work - to money',
+		'If a web developer made a person ',
+		'For success in JavaScript'
 ]
-
+const delay = 3000;
 let sliderIndex = 0;
 
 		// Init caption
 function initCaption(mem,caption) {
+	slideImg.classList.add('active');
 	sign.innerHTML = caption;
-	slideImg.src = './img/img_' + (sliderIndex+1) + '.png';
+	slideImg.src = './img/img_' + (sliderIndex+1) + '.jpg';
 }
 
 initCaption(mem[sliderIndex],caption[sliderIndex])
@@ -35,11 +36,12 @@ nextBtn.addEventListener('click',()=>{
 })
 
 function nextSlide() {
+	slideImg.classList.remove('active');
 	sliderIndex ++;
 	if (sliderIndex > caption.length-1){
 		sliderIndex = 0 ;
 	}
-	currentActive(sliderIndex)
+	currentActive(sliderIndex);
 }
 
 //click to prev
@@ -53,7 +55,7 @@ function prevSlide() {
 	if (sliderIndex < 0){
 		sliderIndex = caption.length - 1 ;
 	}
-	currentActive(sliderIndex)
+	currentActive(sliderIndex);
 }
 
 const activeDote = n => {
@@ -71,6 +73,6 @@ function currentActive(index){
 dots.forEach((item,indexDot)=>{
 	item.addEventListener('click',()=>{
 		sliderIndex = indexDot;
-		currentActive(sliderIndex)
+		currentActive(sliderIndex);
 	})
 })
