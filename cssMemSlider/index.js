@@ -2,6 +2,7 @@ const prevBtn = document.querySelector(".btn__prev"),
   nextBtn = document.querySelector(".btn__next"),
   slides = document.querySelector(".slide"),
   dots = document.querySelectorAll(".dot"),
+  wrDots = document.querySelectorAll(".wrapper__dot"),
   sign = document.querySelector(".sign"),
   slideImg = document.querySelector(".slide__img");
 
@@ -34,8 +35,18 @@ nextBtn.addEventListener("mouseleave", function () {
 const dot1 = document.getElementById("dot1"),
   dot2 = document.getElementById("dot2"),
   dot3 = document.getElementById("dot3"),
-  dot4 = document.getElementById("dot4");
+  dot4 = document.getElementById("dot4"),
+  wrdot1 = document.getElementById("wr__dot1"),
+  wrdot2 = document.getElementById("wr__dot2"),
+  wrdot3 = document.getElementById("wr__dot3"),
+  wrdot4 = document.getElementById("wr__dot4");
 
+wrdot4.addEventListener("mouseenter", function () {
+  dot4.classList.add("hover");
+});
+wrdot4.addEventListener("mouseleave", function () {
+  dot4.classList.remove("hover");
+});
 // hover dots
 dot1.addEventListener("mouseenter", function () {
   dot1.classList.add("hover");
@@ -59,6 +70,32 @@ dot4.addEventListener("mouseenter", function () {
   dot4.classList.add("hover");
 });
 dot4.addEventListener("mouseleave", function () {
+  dot4.classList.remove("hover");
+});
+
+//add space around dot
+wrdot1.addEventListener("mouseenter", function () {
+  dot1.classList.add("hover");
+});
+wrdot1.addEventListener("mouseleave", function () {
+  dot1.classList.remove("hover");
+});
+wrdot2.addEventListener("mouseenter", function () {
+  dot2.classList.add("hover");
+});
+wrdot2.addEventListener("mouseleave", function () {
+  dot2.classList.remove("hover");
+});
+wrdot3.addEventListener("mouseenter", function () {
+  dot3.classList.add("hover");
+});
+wrdot3.addEventListener("mouseleave", function () {
+  dot3.classList.remove("hover");
+});
+wrdot4.addEventListener("mouseenter", function () {
+  dot4.classList.add("hover");
+});
+wrdot4.addEventListener("mouseleave", function () {
   dot4.classList.remove("hover");
 });
 
@@ -118,6 +155,13 @@ function currentActive(index) {
 //click to dot
 
 dots.forEach((item, indexDot) => {
+  item.addEventListener("click", () => {
+    sliderIndex = indexDot;
+    currentActive(sliderIndex);
+  });
+});
+//click to space around dot
+wrDots.forEach((item, indexDot) => {
   item.addEventListener("click", () => {
     sliderIndex = indexDot;
     currentActive(sliderIndex);
