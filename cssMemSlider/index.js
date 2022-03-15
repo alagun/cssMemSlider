@@ -8,7 +8,7 @@ const prevBtn = document.querySelector(".btn__prev"),
 
 const caption = [
   "JavaScript is not difficult and understandable",
-  "Go to work - to money",
+  "[1,2] + [3,4] = '1,23,4'",
   "If a web developer made a person ",
   "For success in JavaScript",
 ];
