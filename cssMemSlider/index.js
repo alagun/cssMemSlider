@@ -1,19 +1,18 @@
 const prevBtn = document.querySelector(".btn__prev"),
   nextBtn = document.querySelector(".btn__next"),
-  slides = document.querySelector(".slide"),
+  slides = document.querySelectorAll(".slide"),
+  slideImgs = document.querySelectorAll(".slide__img"),
   dots = document.querySelectorAll(".dot"),
   wrDots = document.querySelectorAll(".wrapper__dot"),
-  sign = document.querySelector(".sign"),
-  slideImg = document.querySelector(".slide__img");
+  sign = document.querySelector(".sign");
 
-const mem = ["1", "2", "3", "4"];
 const caption = [
   "JavaScript is not difficult and understandable",
   "Go to work - to money",
   "If a web developer made a person ",
   "For success in JavaScript",
 ];
-const delay = 3000;
+
 let sliderIndex = 0;
 
 // hover button previous
@@ -74,6 +73,7 @@ dot4.addEventListener("mouseleave", function () {
 });
 
 //add space around dot
+
 wrdot1.addEventListener("mouseenter", function () {
   dot1.classList.add("hover");
 });
@@ -99,14 +99,24 @@ wrdot4.addEventListener("mouseleave", function () {
   dot4.classList.remove("hover");
 });
 
-// Init caption
-function initCaption(mem, caption) {
-  slideImg.classList.add("active");
-  sign.innerHTML = caption;
-  slideImg.src = "./img/img_" + (sliderIndex + 1) + ".jpg";
-}
+//delay function
 
-initCaption(mem[sliderIndex], caption[sliderIndex]);
+// Init caption
+
+const initCaption = (n, caption) => {
+  for (slide of slides) {
+    slide.classList.add("deactive");
+    slide.classList.remove("active");
+  }
+  setTimeout(() => {
+    slides[n].classList.add("active");
+    sign.innerHTML = caption;
+  }, 5);
+  slides[n].classList.remove("deactive");
+  //sign.innerHTML = caption;
+};
+
+initCaption(sliderIndex, caption[sliderIndex]);
 
 //click to next
 
@@ -115,7 +125,6 @@ nextBtn.addEventListener("click", () => {
 });
 
 function nextSlide() {
-  slideImg.classList.remove("active");
   sliderIndex++;
   if (sliderIndex > caption.length - 1) {
     sliderIndex = 0;
@@ -142,13 +151,13 @@ const activeDote = (n) => {
   for (dot of dots) {
     dot.classList.remove("active");
   }
-  dots[sliderIndex].classList.add("active");
+  dots[n].classList.add("active");
 };
 
 // init functions activ dote & init img
 
 function currentActive(index) {
-  initCaption(mem[index], caption[index]);
+  initCaption(index, caption[index]);
   activeDote(index);
 }
 
