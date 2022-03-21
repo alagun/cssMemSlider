@@ -108,10 +108,18 @@ const initCaption = (n, caption) => {
     slide.classList.add("deactive");
     slide.classList.remove("active");
   }
+  sign.classList.remove("active");
+  sign.classList.add("deactive");
+
   setTimeout(() => {
     slides[n].classList.add("active");
     sign.innerHTML = caption;
+    sign.classList.remove("deactive");
   }, 5);
+  setTimeout(() => {
+    sign.classList.add("active");
+  }, 50);
+
   slides[n].classList.remove("deactive");
   //sign.innerHTML = caption;
 };

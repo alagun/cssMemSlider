@@ -118,6 +118,17 @@ img {
 .caption span {
   font-size: 2rem;
 }
+.sign {
+  opacity: 0;
+  transition: opacity 3s;
+}
+.sign.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.sign.deactive {
+  display: none;
+}
 @media (max-width: 1024px) {
   body {
     padding-top: 60px;
