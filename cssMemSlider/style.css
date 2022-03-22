@@ -101,6 +101,9 @@ img {
 .wr__dot.hover {
   opacity: 0.5;
 }
+.dot.click {
+  border-color: red;
+}
 .dot.active {
   background-color: #000000;
 }

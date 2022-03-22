@@ -40,39 +40,35 @@ const dot1 = document.getElementById("dot1"),
   wrdot3 = document.getElementById("wr__dot3"),
   wrdot4 = document.getElementById("wr__dot4");
 
-wrdot4.addEventListener("mouseenter", function () {
-  dot4.classList.add("hover");
-});
-wrdot4.addEventListener("mouseleave", function () {
-  dot4.classList.remove("hover");
-});
 // hover dots
-dot1.addEventListener("mouseenter", function () {
-  dot1.classList.add("hover");
+// on click dots
+wrdot1.addEventListener("mousedown", function () {
+  dot1.classList.add("click");
 });
-dot1.addEventListener("mouseleave", function () {
-  dot1.classList.remove("hover");
+wrdot1.addEventListener("mouseup", function () {
+  dot1.classList.remove("click");
 });
-dot2.addEventListener("mouseenter", function () {
-  dot2.classList.add("hover");
+wrdot2.addEventListener("mousedown", function () {
+  dot2.classList.add("click");
 });
-dot2.addEventListener("mouseleave", function () {
-  dot2.classList.remove("hover");
+wrdot2.addEventListener("mouseup", function () {
+  dot2.classList.remove("click");
 });
-dot3.addEventListener("mouseenter", function () {
-  dot3.classList.add("hover");
+wrdot3.addEventListener("mousedown", function () {
+  dot3.classList.add("click");
 });
-dot3.addEventListener("mouseleave", function () {
-  dot3.classList.remove("hover");
+wrdot3.addEventListener("mouseup", function () {
+  dot3.classList.remove("click");
 });
-dot4.addEventListener("mouseenter", function () {
-  dot4.classList.add("hover");
+wrdot4.addEventListener("mousedown", function () {
+  dot4.classList.add("click");
 });
-dot4.addEventListener("mouseleave", function () {
-  dot4.classList.remove("hover");
+wrdot4.addEventListener("mouseup", function () {
+  dot4.classList.remove("click");
 });
 
-//add space around dot
+// hover dots
+// add space around dot
 
 wrdot1.addEventListener("mouseenter", function () {
   dot1.classList.add("hover");
