@@ -1,3 +1,4 @@
+alert('Добрый день. Не правильно понял задание и реализовал слайдер с использованием JS. прошу перепроверить работу в четверг')
 const prevBtn = document.querySelector(".btn__prev"),
   nextBtn = document.querySelector(".btn__next"),
   slides = document.querySelectorAll(".slide"),
