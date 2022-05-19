@@ -82,14 +82,26 @@ a {
 	height: 50px;
 }
 
-#active label {
+.pointer {
+
+	display: flex;
+	justify-content: center;
+	margin: 0.1em;
+	width: 2em;
+	height: 1.6em;
+	padding-top: 0.55em;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.pointer span {
 	/*стиль отдельного переключателя*/
 	border-radius: 10px;
 	/*скругление углов*/
 	display: inline-block;
 	/*расположение в строку*/
-	width: 15px;
-	height: 15px;
+	width: 1em;
+	height: 1em;
 	background: #bbb;
 }
 
@@ -97,9 +109,13 @@ a {
 	/*расположение блока с переключателями*/
 	/* margin: 10% 0 0; */
 	text-align: right;
+	background: none;
+	display: flex;
+	align-items: center;
+	justify-content: end;
 }
 
-#active label:hover {
+.pointer span:hover {
 	/*поведение чекбокса при наведении*/
 	background: #76c8ff;
 	border-color: #777 !important;
@@ -114,6 +130,7 @@ a {
 #switch5:checked~.nav #active label:nth-child(5) {
 	background: #18a3dd;
 	border-color: #18a3dd !important;
+	border-radius: 100%;
 }
 
 #slides .image {
