@@ -39,7 +39,7 @@ article img {
 
 #desktop:checked~#slider {
 	/*размер всего слайдера*/
-	max-width: 960px;
+	max-width: 850px;
 	/*максимальнная длинна*/
 }
 
@@ -132,6 +132,17 @@ a {
 	border-color: #18a3dd !important;
 	border-radius: 100%;
 }
+
+/* #switch1:checked~.nav .active .pointer span:nth-child(1),
+#switch2:checked~.nav .active .pointer span:nth-child(2),
+#switch3:checked~.nav .active .pointer span:nth-child(3),
+#switch4:checked~.nav .active .pointer span:nth-child(4),
+#switch5:checked~.nav .active .pointer span:nth-child(5) {
+	background: #18a3dd;
+	border-color: #18a3dd !important;
+	border-radius: 100%;
+} */
+
 
 #slides .image {
 	/*анимация пролистывания изображений*/
